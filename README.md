@@ -22,6 +22,18 @@ Total Customers = DISTINCTCOUNT(train[Customer ID])
 Total Line Items = COUNTROWS(train)
 ```
 
+## Notes
+
+- **Line Items by Category** counts product rows, not literal units sold — `train.csv` has no quantity field, so row count is used as the closest available proxy.
+
+## How to reproduce
+
+1. Open `Flipkart_Sales_Dashboard.pbix` in Power BI Desktop.
+2. The data source is `train.csv` (Kaggle Superstore Sales dataset) — if Power BI asks you to locate it, point it to the copy in this repo.
+3. All five DAX measures (Total Sales, Total Orders, Avg Order Value, Total Customers, Total Line Items) are defined on the `train` table under Modeling > New measure.
+4. Visuals are built directly on `train` columns — no transformations beyond basic data-type fixes in Power Query.
+5. Theme: apply a custom JSON theme (background `#FFD200`, accent `#2874F0`) via View > Themes > Browse for themes.
+
 ## Dashboard contents
 
 | Visual | Fields |
