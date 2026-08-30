@@ -1,10 +1,59 @@
-# Dashboard file
+# Flipkart E-Commerce Sales & Customer Analytics Dashboard
 
-Your actual `.pbix` file lives on the Windows machine where you built it in Power BI Desktop — it was never uploaded to this chat, so it isn't in this folder yet.
+A Flipkart-branded, single-page Power BI dashboard built on the Kaggle Superstore Sales dataset — created for the Simplilearn "Power BI for Beginners" mini project (B.Tech CSE, Uttaranchal University).
 
-To add it:
-1. Rename your saved file to something like `Flipkart_Sales_Dashboard.pbix`
-2. Drop it into this `dashboard/` folder
-3. Commit and push (or drag-and-drop it into this folder on GitHub's web interface)
+![Dashboard preview](final_dashboard.png)
 
-Once added, update the root `README.md`'s repo structure note if needed.
+## Overview
+
+- **Objective:** turn a raw retail sales CSV into an interactive, decision-ready dashboard without manual pivot-table analysis.
+- **Tool:** Microsoft Power BI Desktop (Power Query + DAX).
+- **Dataset:** [Kaggle Superstore Sales Dataset](https://www.kaggle.com/datasets/rohitsahoo/sales-forecasting) — 9,800 rows, 18 columns.
+- **Theme:** custom yellow-and-blue palette inspired by Flipkart's brand colours.
+- **Data integrity:** every KPI, chart, and slicer is built strictly from real columns in `train.csv` — no simulated fields.
+
+## Key metrics (DAX)
+
+```dax
+Total Sales = SUM(train[Sales])
+Total Orders = DISTINCTCOUNT(train[Order ID])
+Avg Order Value = DIVIDE([Total Sales], [Total Orders])
+Total Customers = DISTINCTCOUNT(train[Customer ID])
+Total Line Items = COUNTROWS(train)
+```
+
+## Dashboard contents
+
+| Visual | Fields |
+|---|---|
+| 4 KPI cards | Total Sales, Total Orders, Avg Order Value, Total Customers |
+| Sales by Region & Ship Mode | Region, Ship Mode, Sales |
+| Sales by Sub-Category | Sub-Category, Sales |
+| Sales by Category | Category, Sales |
+| Line Items by Category | Category, row count |
+| Sales by Ship Mode | Ship Mode, Sales (donut) |
+| Sales by State | State, Sales (map) |
+| Sales by Month | Order Date, Sales (trend line) |
+| Segment filter | Segment (button slicer) |
+| Order Date filter | Order Date (range slider) |
+
+## Files in this repo
+
+| File | Description |
+|---|---|
+| `Flipkart_Sales_Dashboard.pbix` | The Power BI project file — open in Power BI Desktop |
+| `final_dashboard.png` | Screenshot of the finished dashboard |
+| `Flipkart_Sales_Dashboard_Report.pdf` / `.docx` | Full mini project report |
+| `Flipkart_Sales_Dashboard_Presentation.pptx` | Project presentation slides |
+| `PowerBI_for_Beginners_Certificate.pdf` | Simplilearn course completion certificate |
+| `train.csv` | Source dataset (Kaggle Superstore Sales) |
+
+## Author
+
+**Abhishek Rawat** — B.Tech CSE, Uttaranchal Institute of Technology, Uttaranchal University
+Roll No. 2401010038 | Faculty Coordinator: Mr. Arpit Goel
+
+## Acknowledgements
+
+- [Simplilearn](https://www.simplilearn.com/) — "Power BI for Beginners" course
+- [Kaggle](https://www.kaggle.com/) — Superstore Sales Dataset (R. Sahoo)
