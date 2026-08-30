@@ -3,6 +3,7 @@
 A Flipkart-branded, single-page Power BI dashboard built on the Kaggle Superstore Sales dataset — created for the Simplilearn "Power BI for Beginners" mini project (B.Tech CSE, Uttaranchal University).
 
 ![Dashboard preview](final_dashboard.webp)
+![Dashboard interaction demo](dashboarddd.gif)
 
 ## Overview
 
